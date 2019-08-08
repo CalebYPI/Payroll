@@ -4,7 +4,10 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.junit.runners.MethodSorters;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringRunner;
 import za.ac.deklerkbasson.domain.user.Employee;
 import za.ac.deklerkbasson.factory.user.EmployeeFactory;
 import za.ac.deklerkbasson.repositoryTest.user.Impl.EmployeeRepositoryImpl;
@@ -13,7 +16,7 @@ import za.ac.deklerkbasson.repositoryTest.user.Impl.EmployeeRepositoryImpl;
 import java.util.Set;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
-class EmployeeServiceImplTest {
+public class EmployeeServiceImplTest {
 
     private EmployeeRepositoryImpl repository;
     private Employee employee;
@@ -38,7 +41,7 @@ class EmployeeServiceImplTest {
 
     @Test
     public void c_update() {
-        String newEmployeeName = "Application Development Theory 3";
+        String newEmployeeName = "Deklerk";
         Employee updated = new Employee.Builder().copy(getSaved()).employeeFirstName(newEmployeeName).build();
         System.out.println("In update, updated = " + updated);
         this.repository.update(updated);
