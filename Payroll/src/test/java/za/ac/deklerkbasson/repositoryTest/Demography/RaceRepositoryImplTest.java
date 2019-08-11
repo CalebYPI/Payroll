@@ -25,7 +25,7 @@ public class RaceRepositoryImplTest {
 
     @Before
     public void setUp() throws Exception {
-        this.repository = RaceRepositoryImpl.getRepository();
+        this.repository = RaceRepositoryImpl.getRaceRepositoryImpl();
         this.race = RaceFactory.buildRace("Test Race");
     }
 

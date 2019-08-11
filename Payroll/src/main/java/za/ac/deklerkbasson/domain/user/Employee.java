@@ -60,6 +60,7 @@ public class Employee {
             this.employeeId = employee.EmployeeID;
             this.employeeFirstName = employee.EmployeeFirstName;
             this.employeeLastName = employee.EmployeeLastName;
+            this.age = employee.age;
 
             return this;
         }

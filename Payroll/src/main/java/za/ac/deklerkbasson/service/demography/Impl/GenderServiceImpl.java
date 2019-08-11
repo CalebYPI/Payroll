@@ -1,19 +1,23 @@
 package za.ac.deklerkbasson.service.demography.Impl;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Service;
 import za.ac.deklerkbasson.domain.demography.Gender;
 import za.ac.deklerkbasson.repositoryTest.demography.GenderRepository;
 import za.ac.deklerkbasson.repositoryTest.demography.Impl.GenderRepositoryImpl;
 import za.ac.deklerkbasson.service.demography.GenderService;
 
 import java.util.Set;
-
+@Service("ServiceImpl")
 public class GenderServiceImpl implements GenderService {
-
+    @Autowired
+    @Qualifier("InMemory")
     private static GenderServiceImpl service = null;
     private GenderRepository repository;
 
     private GenderServiceImpl() {
-        this.repository = GenderRepositoryImpl.getRepository();
+        this.repository = GenderRepositoryImpl.getGenderRepositoryImpl();
     }
 
     public static GenderServiceImpl getService(){
@@ -39,6 +43,11 @@ public class GenderServiceImpl implements GenderService {
     @Override
     public Gender read(String s) {
         return this.repository.read(s);
+    }
+
+    @Override
+    public void removeAll() {
+
     }
 
     @Override

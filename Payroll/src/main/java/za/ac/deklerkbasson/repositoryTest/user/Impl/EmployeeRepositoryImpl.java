@@ -16,9 +16,13 @@ public class EmployeeRepositoryImpl implements EmployeeRepository {
         this.employeess = new HashMap<>();
     }
 
-    public static EmployeeRepository getRepository(){
-        if(repository == null) repository = new EmployeeRepositoryImpl();
-        return repository;
+    private static EmployeeRepositoryImpl employeeRepositoryImpl = null;
+
+    public static EmployeeRepositoryImpl getEmployeeRepositoryImpl() {
+        if (employeeRepositoryImpl == null) {
+            employeeRepositoryImpl = new EmployeeRepositoryImpl();
+        }
+        return employeeRepositoryImpl;
     }
 
     public Employee create(Employee employee){

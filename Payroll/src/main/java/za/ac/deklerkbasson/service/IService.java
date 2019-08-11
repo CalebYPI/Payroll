@@ -1,5 +1,7 @@
 package za.ac.deklerkbasson.service;
 
+import java.util.HashMap;
+
 public interface IService<T, ID> {
     T create(T type);
 
@@ -8,5 +10,8 @@ public interface IService<T, ID> {
     void delete(ID id);
 
     T read(ID id);
+
+    void removeAll();
+
 }
 

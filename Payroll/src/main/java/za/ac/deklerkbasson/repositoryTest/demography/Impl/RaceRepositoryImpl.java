@@ -21,9 +21,13 @@ public class RaceRepositoryImpl implements RaceRepository {
                 .orElse(null);
     }
 
-    public static RaceRepositoryImpl getRepository() {
-        if (repository == null) repository = new RaceRepositoryImpl();
-        return repository;
+    private static RaceRepositoryImpl raceRepositoryImpl = null;
+
+    public static RaceRepositoryImpl getRaceRepositoryImpl() {
+        if (raceRepositoryImpl == null) {
+            raceRepositoryImpl = new RaceRepositoryImpl();
+        }
+        return raceRepositoryImpl;
     }
 
 

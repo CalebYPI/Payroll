@@ -4,10 +4,7 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
-import org.junit.runner.RunWith;
 import org.junit.runners.MethodSorters;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit4.SpringRunner;
 import za.ac.deklerkbasson.domain.user.Employee;
 import za.ac.deklerkbasson.factory.user.EmployeeFactory;
 import za.ac.deklerkbasson.repositoryTest.user.Impl.EmployeeRepositoryImpl;
@@ -27,7 +24,7 @@ public class EmployeeServiceImplTest {
 
     @Before
     public void setUp() throws Exception {
-        this.repository = (EmployeeRepositoryImpl) EmployeeRepositoryImpl.getRepository();
+        this.repository = (EmployeeRepositoryImpl) EmployeeRepositoryImpl.getEmployeeRepositoryImpl();
         this.employee = EmployeeFactory.buildEmployee("Deklerk", "Basson", 23);
     }
 

@@ -6,9 +6,9 @@ import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runners.MethodSorters;
 import za.ac.deklerkbasson.domain.demography.Race;
-import za.ac.deklerkbasson.domain.user.Employee;
 import za.ac.deklerkbasson.factory.demography.RaceFactory;
 import za.ac.deklerkbasson.repositoryTest.demography.Impl.RaceRepositoryImpl;
+
 
 import java.util.Set;
 
@@ -24,7 +24,7 @@ class RaceServiceImplTest {
 
     @Before
     public void setUp() throws Exception {
-        this.repository = RaceRepositoryImpl.getRepository();
+        this.repository = RaceRepositoryImpl.getRaceRepositoryImpl();
         this.race = RaceFactory.buildRace("Asian");
     }
 

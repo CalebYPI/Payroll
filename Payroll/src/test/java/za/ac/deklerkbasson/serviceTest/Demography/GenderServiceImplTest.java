@@ -9,6 +9,7 @@ import za.ac.deklerkbasson.domain.demography.Gender;
 import za.ac.deklerkbasson.factory.demography.GenderFactory;
 import za.ac.deklerkbasson.repositoryTest.demography.Impl.GenderRepositoryImpl;
 
+
 import java.util.Set;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
@@ -23,7 +24,7 @@ class GenderServiceImplTest {
 
     @Before
     public void setUp() throws Exception {
-        this.repository = GenderRepositoryImpl.getRepository();
+        this.repository = GenderRepositoryImpl.getGenderRepositoryImpl();
         this.gender = GenderFactory.buildGender("Male");
     }
 

@@ -12,7 +12,7 @@ public class GenderFactoryTest {
 
     @Before
     public void setUp() throws Exception {
-        this.testName = "testName";
+        this.testName = "Male";
     }
 
     @Test

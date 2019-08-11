@@ -21,9 +21,13 @@ public class GenderRepositoryImpl implements GenderRepository {
                 .orElse(null);
     }
 
-    public static GenderRepositoryImpl getRepository(){
-        if (repository == null) repository = new GenderRepositoryImpl();
-        return repository;
+    private static GenderRepositoryImpl genderRepositoryImpl = null;
+
+    public static GenderRepositoryImpl getGenderRepositoryImpl() {
+        if (genderRepositoryImpl == null) {
+            genderRepositoryImpl = new GenderRepositoryImpl();
+        }
+        return genderRepositoryImpl;
     }
 
 
