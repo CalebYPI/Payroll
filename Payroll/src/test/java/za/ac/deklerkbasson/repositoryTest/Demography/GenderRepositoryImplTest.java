@@ -56,12 +56,12 @@ public class GenderRepositoryImplTest {
 
     @Test
     public void c_update() {
-        String newname = "New Test Gender Name";
-        Gender gender = new Gender.Builder().copy(getSavedGender()).genderName(newname).build();
+        String newName = "New Test Gender Name";
+        Gender gender = new Gender.Builder().copy(getSavedGender()).genderName(newName).build();
         System.out.println("In update, about_to_updated = " + gender);
         Gender updated = this.repository.update(gender);
         System.out.println("In update, updated = " + updated);
-        Assert.assertSame(newname, updated.getGenderName());
+        Assert.assertSame(newName, updated.getGenderName());
         d_getAll();
     }
 

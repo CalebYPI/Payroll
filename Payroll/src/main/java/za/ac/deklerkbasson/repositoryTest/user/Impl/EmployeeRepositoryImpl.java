@@ -10,10 +10,10 @@ import java.util.*;
 public class EmployeeRepositoryImpl implements EmployeeRepository {
 
     private static EmployeeRepositoryImpl repository = null;
-    private Map<String, Employee> employeess;
+    private Map<String, Employee> employees;
 
     private EmployeeRepositoryImpl() {
-        this.employeess = new HashMap<>();
+        this.employees = new HashMap<>();
     }
 
     private static EmployeeRepositoryImpl employeeRepositoryImpl = null;
@@ -26,25 +26,25 @@ public class EmployeeRepositoryImpl implements EmployeeRepository {
     }
 
     public Employee create(Employee employee){
-        this.employeess.put(employee.getEmployeeID(),employee);
+        this.employees.put(employee.getEmployeeID(),employee);
         return employee;
     }
 
     public Employee read(String employeeId){
-        return this.employeess.get(employeeId);
+        return this.employees.get(employeeId);
     }
 
     public Employee update(Employee employee) {
-        this.employeess.replace(employee.getEmployeeID(),employee);
-        return this.employeess.get(employee.getEmployeeID());
+        this.employees.replace(employee.getEmployeeID(),employee);
+        return this.employees.get(employee.getEmployeeID());
     }
 
     public void delete(String employeeId) {
-        this.employeess.remove(employeeId);
+        this.employees.remove(employeeId);
     }
 
     public Set<Employee> getAll(){
-        Collection<Employee> students = this.employeess.values();
+        Collection<Employee> students = this.employees.values();
         Set<Employee> set = new HashSet<>();
         set.addAll(students);
         return set;
